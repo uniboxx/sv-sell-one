@@ -6,8 +6,7 @@
 
 <section class="hero">
   <div class="hero-showcase">
-    <h1 class="purple">MOVE TO</h1>
-    <h1 class="purple mb-xs">SPAIN</h1>
+    <h1 class="purple mb-xs">MOVE TO SPAIN</h1>
     <h4 class="italic semi-bold">
       There's no need to make the same mistakes I made.
     </h4>
@@ -42,6 +41,11 @@
       #927bce
     );
 
+    h1 {
+      max-width: 7ch;
+      margin: 16px auto 32px;
+    }
+
     .phone-cover,
     .book-cover {
       display: inline-block;
@@ -65,13 +69,15 @@
     background-color: black;
     h1 {
       font-size: 48px;
+      max-width: 15ch;
+      margin: 16px auto 32px;
     }
     p {
       margin-bottom: 32px;
     }
   }
 
-  @media screen and (min-width: 60rem) {
+  @media screen and (min-width: 80rem) {
     .hero {
       display: flex;
       height: 100svh;
@@ -113,7 +119,7 @@
       width: 50%;
       background-color: black;
       h1 {
-        font-size: 100px;
+        font-size: 80px;
       }
       p {
         margin-bottom: 64px;

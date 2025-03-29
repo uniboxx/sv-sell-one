@@ -61,7 +61,7 @@
       flex-direction: row;
       justify-content: space-between;
       .author-image {
-        width: 40%;
+        width: 60%;
         align-self: start;
         border: 6px solid black;
         box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);

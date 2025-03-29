@@ -1,3 +1,5 @@
+<!-- By default the component manage until 5 tabs. To add more add relative lines in css below where is the relative comment -->
+
 <script lang="ts">
   import { chapters } from '$assets/data';
 </script>
@@ -6,25 +8,25 @@
   <h2 class="mb-l">What you're getting</h2>
   <div class="chapter-container">
     <div class="tabs">
-      {#each chapters as chapter (chapter.number)}
+      {#each chapters as { number, title } (number)}
         <input
           type="radio"
           name="chapter"
-          id={`tab-${chapter.number}`}
-          checked
+          id={`tab-${number}`}
+          checked={number === 1}
         />
-        <label for={`tab-${chapter.number}`}
+        <label for={`tab-${number}`}
           ><h3>
-            Chapter {chapter.number}<span>: {chapter.title}</span>
+            Chapter {number}<span>: {title}</span>
           </h3></label
         >
       {/each}
     </div>
     <div class="chapter-info">
-      {#each chapters as chapter (chapter.number)}
-        <div class="content" id={`content-${chapter.number}`}>
-          <h3 class="chapter-strapline italic mb-s">{chapter.strapline}</h3>
-          <p>{chapter.excerpt}</p>
+      {#each chapters as { number, strapline, excerpt } (number)}
+        <div class="content" id={`content-${number}`}>
+          <h3 class="chapter-strapline italic mb-s">{strapline}</h3>
+          <p>{excerpt}</p>
         </div>
       {/each}
     </div>
@@ -68,6 +70,8 @@
         }
       }
     }
+
+    /* add more selectors here editing tab-n and content-n with subsequent numbers*/
     &:has(input[type='radio']#tab-1:checked) #content-1,
     &:has(input[type='radio']#tab-2:checked) #content-2,
     &:has(input[type='radio']#tab-3:checked) #content-3,
@@ -78,12 +82,11 @@
   }
 
   .chapter-info {
-    width: 100%;
     margin-top: 16px;
     .content {
       display: none;
       padding: 20px;
-      border: 1px solid black;
+
       margin: auto;
     }
   }
@@ -105,6 +108,9 @@
           span {
             display: inline;
           }
+        }
+        label {
+          border-bottom: 1px solid grey;
         }
       }
       .chapter-info {
@@ -128,7 +134,6 @@
     }
 
     label {
-      border-bottom: 1px solid grey;
       width: 100%;
       display: block;
       padding: 12px;

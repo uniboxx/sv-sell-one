@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { HeroSection, ChapterPreview } from '$components';
+  import { HeroSection, ChapterPreview, AuthorSection } from '$components';
 </script>
 
 <svelte:head>
@@ -12,3 +12,4 @@
 
 <HeroSection />
 <ChapterPreview />
+<AuthorSection />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import authorPic from '$images/profile_pic.jpg?enhanced';
+  import authorPic from '$images/profile_pic.webp?enhanced';
 </script>
 
 <section class="author-section">

@@ -85,8 +85,6 @@
     margin-top: 16px;
     .content {
       display: none;
-      padding: 20px;
-
       margin: auto;
     }
   }
@@ -138,6 +136,13 @@
       display: block;
       padding: 12px;
       text-align: left;
+    }
+    .chapter-info {
+      margin-top: 16px;
+      .content {
+        display: none;
+        padding: 20px;
+      }
     }
   }
 </style>

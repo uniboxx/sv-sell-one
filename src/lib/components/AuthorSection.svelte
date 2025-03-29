@@ -23,13 +23,13 @@
         the lifestyle he once dreamed of.
       </p>
     </div>
-    <img src={authorPic} alt="author" />
+    <enhanced:img src={authorPic} alt="author" />
   </div>
 </section>
 
 <style>
   .author-section {
-    padding: 10px;
+    margin: 2rem 1rem;
     h2 {
       margin-bottom: 32px;
     }

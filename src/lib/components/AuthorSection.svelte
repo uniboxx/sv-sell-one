@@ -1,5 +1,5 @@
 <script lang="ts">
-  import authorPic from '$assets/profile_pic.jpg';
+  import authorPic from '$images/profile_pic.jpg?enhanced';
 </script>
 
 <section class="author-section">
@@ -23,7 +23,7 @@
         the lifestyle he once dreamed of.
       </p>
     </div>
-    <enhanced:img src={authorPic} alt="author" />
+    <enhanced:img class="author-image" src={authorPic} alt="author" />
   </div>
 </section>
 
@@ -37,9 +37,10 @@
   .author-container {
     display: flex;
     flex-direction: column;
-    img {
+    .author-image {
       display: block;
       width: 80%;
+      height: auto;
       margin: 0 auto;
       border: 6px solid black;
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import bookCover from '$assets/book_cover.png';
-  import phoneCover from '$assets/phone_cover.png';
+  import bookCover from '$images/book_cover.png?enhanced';
+  import phoneCover from '$images/phone_cover.png?enhanced';
   import { Button } from '$components';
 </script>
 
@@ -11,8 +11,8 @@
     <h4 class="italic semi-bold">
       There's no need to make the same mistakes I made.
     </h4>
-    <img src={phoneCover} alt="" class="phone-cover" />
-    <img src={bookCover} alt="" class="book-cover" />
+    <enhanced:img src={phoneCover} alt="" class="phone-cover" />
+    <enhanced:img src={bookCover} alt="" class="book-cover" />
   </div>
   <div class="hero-text white text-center">
     <h1 class="mb-m">THIS EBOOK WILL SAVE YOU MONEY, TIME & NERVES</h1>
@@ -42,7 +42,8 @@
       #927bce
     );
 
-    img {
+    .phone-cover,
+    .book-cover {
       display: inline-block;
       vertical-align: middle;
       margin-top: 32px;
@@ -50,10 +51,12 @@
 
     .phone-cover {
       width: 25%;
+      height: auto;
     }
 
     .book-cover {
       width: 55%;
+      height: auto;
     }
   }
 

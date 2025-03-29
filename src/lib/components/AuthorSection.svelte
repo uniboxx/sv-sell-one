@@ -40,6 +40,7 @@
     .author-image {
       display: block;
       width: 80%;
+      max-width: 1000px;
       height: auto;
       margin: 0 auto;
       border: 6px solid black;
@@ -59,7 +60,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      img {
+      .author-image {
         width: 40%;
         align-self: start;
         border: 6px solid black;

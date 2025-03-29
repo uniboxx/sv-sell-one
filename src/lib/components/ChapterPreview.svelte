@@ -1,32 +1,28 @@
-<!-- By default the component manage until 5 tabs. To add more add relative lines in css below where is the relative comment -->
+<!-- By default this component manage until 5 tabs. To add more add relative lines in css below where is the relative comment -->
 
 <script lang="ts">
-  import { chapters } from '$assets/data';
+  // Pass an array of objects containing each: id, label, content title and content description
+  const { data } = $props();
 </script>
 
-<section class="chapter-preview default-margin">
-  <h2 class="mb-l">What you're getting</h2>
-  <div class="chapter-container">
+<section class="tabbed-list">
+  <h2>What you're getting</h2>
+  <div class="main-container">
     <div class="tabs">
-      {#each chapters as { number, title } (number)}
-        <input
-          type="radio"
-          name="chapter"
-          id={`tab-${number}`}
-          checked={number === 1}
-        />
-        <label for={`tab-${number}`}
+      {#each data as { id, label } (id)}
+        <input type="radio" name="tab" id={`tab-${id}`} checked={id === 1} />
+        <label for={`tab-${id}`}
           ><h3>
-            Chapter {number}<span>: {title}</span>
+            Chapter {id}<span>: {label}</span>
           </h3></label
         >
       {/each}
     </div>
-    <div class="chapter-info">
-      {#each chapters as { number, strapline, excerpt } (number)}
-        <div class="content" id={`content-${number}`}>
-          <h3 class="chapter-strapline italic mb-s">{strapline}</h3>
-          <p>{excerpt}</p>
+    <div class="content-info">
+      {#each data as { id, contentTitle, contentDescription } (id)}
+        <div class="content" id={`content-${id}`}>
+          <h3>{contentTitle}</h3>
+          <p>{contentDescription}</p>
         </div>
       {/each}
     </div>
@@ -34,22 +30,23 @@
 </section>
 
 <style>
-  .chapter-preview {
+  .tabbed-list {
     padding: 4px;
     margin: 2rem 1rem;
+    max-width: 1150px;
 
     h2 {
       font-size: 48px;
       margin-bottom: 16px;
     }
   }
-  .chapter-container {
+  .main-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
     .tabs {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
       input[type='radio'] {
         display: none;
@@ -81,21 +78,25 @@
     }
   }
 
-  .chapter-info {
-    margin-top: 16px;
+  .content-info {
     .content {
       display: none;
-      margin: auto;
+
+      h3 {
+        font-style: italic;
+        margin: 32px 0 16px 0;
+      }
     }
   }
 
   @media screen and (min-width: 40rem) {
-    .chapter-preview {
+    .tabbed-list {
       padding: 10px;
     }
-    .chapter-container {
+    .main-container {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       margin-top: 64px;
 
       .tabs {
@@ -111,18 +112,18 @@
           border-bottom: 1px solid grey;
         }
       }
-      .chapter-info {
+      .content-info {
         width: 55%;
-        margin-top: 0;
+        h3 {
+          margin: 0 0 16px 0;
+        }
       }
     }
   }
   @media screen and (min-width: 80rem) {
-    .chapter-preview {
+    .tabbed-list {
       padding: 80px;
-      margin-left: 12vw;
-      margin-right: 20vw;
-      max-width: 1250px;
+      margin: 0 auto;
     }
 
     input[type='radio']:checked + label {
@@ -137,11 +138,11 @@
       padding: 12px;
       text-align: left;
     }
-    .chapter-info {
+    .content-info {
       margin-top: 16px;
       .content {
         display: none;
-        padding: 20px;
+        padding: 0 20px;
       }
     }
   }

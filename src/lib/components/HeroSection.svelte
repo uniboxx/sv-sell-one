@@ -28,10 +28,11 @@
 <style>
   .hero-showcase {
     text-align: center;
-    font-size: bold;
+    font-size: 48px;
     position: relative;
     width: 100%;
     height: 100svh;
+    overflow-y: hidden;
     padding: 48px 16px 0;
     background: linear-gradient(
       135deg,

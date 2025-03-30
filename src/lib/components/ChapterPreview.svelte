@@ -1,8 +1,17 @@
 <!-- By default this component manage until 5 tabs. To add more add relative lines in css below where is the relative comment -->
 
 <script lang="ts">
+  interface ListItem {
+    id: number;
+    label: string;
+    contentTitle: string;
+    contentDescription: string;
+  }
+  interface Props {
+    data: ListItem[];
+  }
   // Pass an array of objects containing each: id, label, content title and content description
-  const { data } = $props();
+  const { data }: Props = $props();
 </script>
 
 <section class="tabbed-list">

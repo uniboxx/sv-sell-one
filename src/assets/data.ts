@@ -1,11 +1,4 @@
-interface Chapter {
-  id: number;
-  label: string;
-  contentTitle: string;
-  contentDescription: string;
-}
-
-export const chapters: Chapter[] = [
+export const chapters = [
   {
     id: 1,
     label: 'Navigating the Spanish Bureaucracy',

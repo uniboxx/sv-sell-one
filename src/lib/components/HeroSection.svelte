@@ -31,6 +31,7 @@
     font-size: bold;
     position: relative;
     width: 100%;
+    height: 100svh;
     padding: 48px 16px 0;
     background: linear-gradient(
       135deg,
@@ -87,6 +88,7 @@
     .hero-showcase {
       position: relative;
       width: 50%;
+      height: 100%;
       padding: 100px 16px 0;
       background: linear-gradient(
         135deg,
@@ -101,13 +103,13 @@
         position: absolute;
         right: 2%;
         bottom: 0;
-        width: 65%;
+        width: 55%;
         transform: translateY(30%);
       }
 
       .phone-cover {
         position: absolute;
-        width: 35%;
+        width: 25%;
         bottom: 0;
         right: 52%;
         transform: translateY(25%);

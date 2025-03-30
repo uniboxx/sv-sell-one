@@ -28,7 +28,6 @@
 <style>
   .hero-showcase {
     text-align: center;
-    font-size: 48px;
     position: relative;
     width: 100%;
     height: 100svh;
@@ -44,6 +43,7 @@
     );
 
     h1 {
+      font-size: 5rem;
       max-width: 7ch;
       margin: 16px auto 32px;
     }
@@ -99,6 +99,10 @@
         #ece5ff 75%,
         #927bce
       );
+
+      h1 {
+        font-size: 6rem;
+      }
 
       .book-cover {
         position: absolute;

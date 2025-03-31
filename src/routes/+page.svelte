@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { HeroSection, ChapterPreview, AuthorSection } from '$components';
+  import {
+    HeroSection,
+    ChapterPreview,
+    AuthorSection,
+    FaqSection,
+  } from '$components';
   import { chapters } from '$assets/data';
 </script>
 
@@ -14,3 +19,4 @@
 <HeroSection />
 <ChapterPreview data={chapters} />
 <AuthorSection />
+<FaqSection />

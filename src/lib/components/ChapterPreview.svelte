@@ -14,7 +14,7 @@
   const { data }: Props = $props();
 </script>
 
-<section class="tabbed-list">
+<section class="tabbed-list landing-page-section">
   <h2>What you're getting</h2>
   <div class="main-container">
     <div class="tabs">
@@ -40,10 +40,6 @@
 
 <style>
   .tabbed-list {
-    padding: 4px;
-    margin: 2rem 1rem;
-    max-width: 1150px;
-
     h2 {
       font-size: 48px;
       margin-bottom: 16px;
@@ -99,9 +95,6 @@
   }
 
   @media screen and (min-width: 40rem) {
-    .tabbed-list {
-      padding: 10px;
-    }
     .main-container {
       display: flex;
       flex-direction: row;
@@ -130,11 +123,6 @@
     }
   }
   @media screen and (min-width: 80rem) {
-    .tabbed-list {
-      padding: 80px;
-      margin: 0 auto;
-    }
-
     input[type='radio']:checked + label {
       box-shadow:
         0 4px 6px rgba(0, 0, 0, 0.1),

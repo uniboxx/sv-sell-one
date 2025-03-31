@@ -2,8 +2,8 @@
   import authorPic from '$images/profile_pic.webp?enhanced';
 </script>
 
-<section class="author-section">
-  <h2 class="mb-l">About the author</h2>
+<section class="landing-page-section">
+  <h2>About the author</h2>
   <div class="author-container">
     <div class="author-text">
       <p>
@@ -28,8 +28,7 @@
 </section>
 
 <style>
-  .author-section {
-    margin: 2rem 1rem;
+  .landing-page-section {
     h2 {
       margin-bottom: 32px;
     }
@@ -37,21 +36,21 @@
   .author-container {
     display: flex;
     flex-direction: column;
-    .author-image {
-      display: block;
-      width: 80%;
-      max-width: 1000px;
-      height: auto;
-      margin: 0 auto;
-      border: 6px solid black;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-      margin-bottom: 32px;
-    }
-    .author-text {
-      order: 2;
-      p {
-        margin-bottom: 8px;
-      }
+  }
+  .author-image {
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    border: 6px solid var(--foreground);
+    box-shadow: 0 4px 24px var(--foreground);
+    margin-bottom: 32px;
+  }
+  .author-text {
+    order: 2;
+    p {
+      margin-bottom: 8px;
     }
   }
 
@@ -60,24 +59,24 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      .author-image {
-        width: 60%;
-        align-self: start;
-        border: 6px solid black;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-      }
-      .author-text {
-        order: 0;
-        width: 50%;
-      }
+    }
+    .author-text {
+      order: 0;
+      width: 70%;
+    }
+    .author-image {
+      align-self: start;
+      width: 50%;
     }
   }
   @media screen and (min-width: 80rem) {
-    .author-section {
-      padding: 80px 0;
-      margin-left: 12vw;
-      margin-right: 20vw;
-      max-width: 1150px;
+    .author-text {
+      order: 0;
+      width: 70%;
+    }
+    .author-image {
+      align-self: start;
+      width: 60%;
     }
   }
 </style>

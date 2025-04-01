@@ -1,5 +1,5 @@
 <script lang="ts">
-  import authorPic from '$images/profile_pic.webp?enhanced';
+  import authorPic from '$assets/images/profile_pic.webp?enhanced';
 </script>
 
 <section class="landing-page-section">

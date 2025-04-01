@@ -1,6 +1,6 @@
 <script lang="ts">
-  import bookCover from '$images/book_cover.webp?enhanced';
-  import phoneCover from '$images/phone_cover.webp?enhanced';
+  import bookCover from '$assets/images/book_cover.webp?enhanced';
+  import phoneCover from '$assets/images/phone_cover.webp?enhanced';
   import { Button } from '$components';
 </script>
 

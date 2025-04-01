@@ -21,7 +21,10 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 125%;
+  font-size: 112.5%;
+  @media screen and (min-width: 80rem) {
+    font-size: 125%;
+  }
 }
 body {
   font-family: Roboto, sans-serif;

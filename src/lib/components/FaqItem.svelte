@@ -17,8 +17,8 @@
   </div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
+    width="16"
+    height="16"
     fill="currentColor"
     class="bi bi-chevron-down"
     viewBox="0 0 16 16"
@@ -40,6 +40,14 @@
     text-align: left;
     margin-bottom: 32px;
 
+    svg {
+      transition: transform 0.3s linear;
+      width: 4rem;
+      path {
+        fill: grey;
+      }
+    }
+
     &.expanded svg {
       transform: rotate(180deg);
     }
@@ -53,28 +61,18 @@
   .question-and-answer {
     padding-right: 40px;
     flex-grow: 1;
-  }
-
-  .answer {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition:
-      max-height 0.3s ease-out,
-      opacity 0.3s ease-out;
-  }
-
-  button svg {
-    transition: transform 0.3s linear;
-    width: 4rem;
-    path {
-      fill: grey;
+    .question {
+      font-weight: 600;
+      margin-bottom: 16px;
     }
-  }
-
-  .question {
-    font-weight: 600;
-    margin-bottom: 16px;
+    .answer {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        max-height 0.3s ease-out,
+        opacity 0.3s ease-out;
+    }
   }
 
   @media screen and (min-width: 40rem) {

@@ -47,6 +47,10 @@
       max-width: 7ch;
       margin: 16px auto 32px;
     }
+    h4 {
+      font: italic semi-bold;
+      color: hsl(0, 0%, 20%);
+    }
 
     .phone-cover,
     .book-cover {

@@ -14,7 +14,7 @@
   const { data }: Props = $props();
 </script>
 
-<section class="tabbed-list landing-page-section">
+<section class="landing-page-section">
   <h2>What you're getting</h2>
   <div class="main-container">
     <div class="tabs">
@@ -39,12 +39,6 @@
 </section>
 
 <style>
-  .tabbed-list {
-    h2 {
-      font-size: 48px;
-      margin-bottom: 16px;
-    }
-  }
   .main-container {
     display: flex;
     flex-direction: column;

@@ -40,6 +40,23 @@
     text-align: left;
     margin-bottom: 32px;
 
+    .question-and-answer {
+      padding-right: 40px;
+      flex-grow: 1;
+      .question {
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .answer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+          max-height 0.3s ease-out,
+          opacity 0.3s ease-out;
+      }
+    }
+
     svg {
       transition: transform 0.3s linear;
       width: 4rem;
@@ -55,23 +72,6 @@
     &.expanded .answer {
       max-height: unset;
       opacity: 1;
-    }
-  }
-
-  .question-and-answer {
-    padding-right: 40px;
-    flex-grow: 1;
-    .question {
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-    .answer {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition:
-        max-height 0.3s ease-out,
-        opacity 0.3s ease-out;
     }
   }
 

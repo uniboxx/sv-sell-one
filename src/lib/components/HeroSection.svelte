@@ -74,7 +74,7 @@
     padding: 48px 5%;
     background-color: black;
     h1 {
-      font-size: 48px;
+      font-size: calc(48rem / 18);
       max-width: 15ch;
       margin: 16px auto 32px;
     }
@@ -130,7 +130,7 @@
       width: 50%;
       background-color: black;
       h1 {
-        font-size: 80px;
+        font-size: 4rem;
       }
       p {
         margin-bottom: 64px;

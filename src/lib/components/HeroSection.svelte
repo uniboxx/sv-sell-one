@@ -44,7 +44,7 @@
 
     h1 {
       font-size: 5rem;
-      max-width: 7ch;
+      max-width: 5ch;
       margin: 16px auto 32px;
     }
     h4 {
@@ -83,6 +83,13 @@
     }
   }
 
+  @media screen and (min-width: 40rem) {
+    .hero-showcase {
+      h1 {
+        max-width: 7ch;
+      }
+    }
+  }
   @media screen and (min-width: 80rem) {
     .hero {
       display: flex;
@@ -106,6 +113,7 @@
 
       h1 {
         font-size: 6rem;
+        max-width: 7ch;
       }
 
       .book-cover {

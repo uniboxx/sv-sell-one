@@ -1,6 +1,6 @@
 <script lang="ts">
   import { FaqItem, Button } from '$components';
-  import telegramIcon from '$icons/telegram.svg';
+
   import { faqs } from '$assets/data';
 
   let questionCurrentlyExpanded = $state(-1);
@@ -31,7 +31,7 @@
       <span>
         Hit me up on Telegram <img
           class="telegram-icon"
-          src={telegramIcon}
+          src="/icons/telegram.svg"
           alt=""
         />
       </span>

@@ -67,6 +67,15 @@ h1 {
   font-weight: bold;
 }
 
+.heroSectionTitle {
+  font-size: calc(48rem / 18);
+  max-width: 15ch;
+  margin: 16px auto 32px;
+  @media screen and (min-width: 80rem) {
+    font-size: 4rem;
+  }
+}
+
 h2 {
   font-size: 3rem;
   font-family: 'Anton', sans-serif;

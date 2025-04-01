@@ -1,7 +1,14 @@
 <script lang="ts">
-  import bookCover from '$assets/images/book_cover.webp?enhanced';
-  import phoneCover from '$assets/images/phone_cover.webp?enhanced';
+  import bookCover from '$assets/images/book_cover.webp';
+  import phoneCover from '$assets/images/phone_cover.webp';
   import { Button } from '$components';
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    children?: Snippet;
+  }
+
+  const { children }: Props = $props();
 </script>
 
 <section class="hero">
@@ -10,25 +17,32 @@
     <h4 class="italic semi-bold">
       There's no need to make the same mistakes I made.
     </h4>
-    <enhanced:img src={phoneCover} alt="" class="phone-cover" />
-    <enhanced:img src={bookCover} alt="" class="book-cover" />
+    <div class="images">
+      <img src={phoneCover} alt="" class="phone-cover" />
+      <img src={bookCover} alt="" class="book-cover" />
+    </div>
   </div>
-  <div class="hero-text white text-center">
-    <h1 class="mb-m">THIS EBOOK WILL SAVE YOU MONEY, TIME & NERVES</h1>
-    <p class="light-grey mb-l">
-      I moved to Spain seven years ago. The process was painful and difficult. I
-      learned most things the hard way: finding a job, getting a visa,
-      calculating my cost of living, choosing an apartment. That's why I wrote
-      this e-book, to tell you how I did it. No bullshit, no stress.
-    </p>
-    <Button>Purchase E-book for $10</Button>
+  <div id="hero-right" class="hero-text white text-center">
+    {#if children}
+      {@render children()}
+    {:else}
+      <h1 class="heroSectionTitle">
+        THIS EBOOK WILL SAVE YOU MONEY, TIME & NERVES
+      </h1>
+      <p class="light-grey mb-l">
+        I moved to Spain seven years ago. The process was painful and difficult.
+        I learned most things the hard way: finding a job, getting a visa,
+        calculating my cost of living, choosing an apartment. That's why I wrote
+        this e-book, to tell you how I did it. No bullshit, no stress.
+      </p>
+      <Button>Purchase E-book for $10</Button>
+    {/if}
   </div>
 </section>
 
 <style>
   .hero-showcase {
     text-align: center;
-    position: relative;
     width: 100%;
     height: 100svh;
     overflow-y: hidden;
@@ -52,32 +66,32 @@
       color: hsl(0, 0%, 20%);
     }
 
-    .phone-cover,
-    .book-cover {
-      display: inline-block;
-      vertical-align: middle;
+    .images {
+      display: flex;
+      justify-content: center;
+      align-items: end;
       margin-top: 32px;
-    }
 
-    .phone-cover {
-      width: 25%;
-      height: auto;
-    }
+      .phone-cover,
+      .book-cover {
+        display: block;
+        height: auto;
+      }
 
-    .book-cover {
-      width: 55%;
-      height: auto;
+      .phone-cover {
+        width: 30%;
+      }
+
+      .book-cover {
+        width: 50%;
+      }
     }
   }
 
   .hero-text {
     padding: 48px 5%;
     background-color: black;
-    h1 {
-      font-size: calc(48rem / 18);
-      max-width: 15ch;
-      margin: 16px auto 32px;
-    }
+
     p {
       margin-bottom: 32px;
     }
@@ -87,6 +101,15 @@
     .hero-showcase {
       h1 {
         max-width: 7ch;
+      }
+      .images {
+        .phone-cover {
+          width: 24%;
+        }
+
+        .book-cover {
+          width: 40%;
+        }
       }
     }
   }
@@ -115,31 +138,13 @@
         font-size: 6rem;
         max-width: 7ch;
       }
-
-      .book-cover {
-        position: absolute;
-        right: 2%;
-        bottom: 0;
-        width: 55%;
-        transform: translateY(30%);
-      }
-
-      .phone-cover {
-        position: absolute;
-        width: 25%;
-        bottom: 0;
-        right: 52%;
-        transform: translateY(25%);
-      }
     }
 
     .hero-text {
       padding: 100px 5%;
       width: 50%;
       background-color: black;
-      h1 {
-        font-size: 4rem;
-      }
+
       p {
         margin-bottom: 64px;
       }
